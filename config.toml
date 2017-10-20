@@ -1,4 +1,4 @@
-baseurl = "https://pchuzi49.github.io/the-website/"
+baseurl = "https://github.com/pchuzi49/the-website.git"
 languageCode = "en-us"
 title = "Peter Chuzie's blog"
 # Define how many pages appear per site
