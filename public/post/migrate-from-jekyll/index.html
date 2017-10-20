@@ -1,0 +1,251 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Peter Chuzie&#39;s blog</title>
+        <meta name="author">
+        <meta name="description" content="The decent blog of Peter Chuzie.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.30" />
+        <link href="https://example.org/post/index.xml" rel="alternate" type="application/rss+xml" title="Peter Chuzie&#39;s blog" />
+        <link href="https://example.org/post/index.xml" rel="feed" type="application/rss+xml" title="Peter Chuzie&#39;s blog" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://example.org/css/styles.css">
+        <link rel="icon" href="https://example.org/favicon.ico">
+        <link rel="apple-touch-icon" href="https://example.org/apple-touch-icon.png" />
+        <link rel="stylesheet" href="https://example.org/css/highlightjs/monokai.css">
+        <script src="https://example.org/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+        <style>
+        .site-header h2 .logo {
+        background: url(https://example.org/img/desk.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(https://example.org/img/desk.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(https://example.org/img/desk.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2>Customizable header title</h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="https://example.org/" title="Back to home">&laquo; Back to home</a>
+            
+<h1><a href="https://example.org/post/migrate-from-jekyll/" title="Visualizing Data">Visualizing Data</a></h1>
+
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.10.10">2017.10.10</time>
+
+    &middot; Tagged in
+        
+        <a href="https://example.org/tags/jekyll">jekyll</a>, 
+        
+        <a href="https://example.org/tags/migration">migration</a>, 
+        
+        <a href="https://example.org/tags/hugo">hugo</a>
+        
+    
+
+</span>
+</footer>
+
+            <h2 id="scatter-plots">Scatter Plots</h2>
+
+<p>First it is important to library all the required tools &hellip;</p>
+
+<p></p>
+
+<pre><code class="language-r">library(Lahman)
+library(sqldf)
+library(ggplot2)
+</code></pre>
+
+<p>&hellip; then it is necessary to extract the data &hellip;</p>
+
+<pre class="r"><code>query&lt;-&quot;SELECT playerID,sum(HR),sum(SO)
+FROM Batting 
+GROUP BY playerID
+HAVING sum(HR)&gt;400&quot;
+sqldf(query)</code></pre>
+<pre><code>##     playerID sum(HR) sum(SO)
+## 1  aaronha01     755    1383
+## 2  bagweje01     449    1558
+## 3  bankser01     512    1236
+## 4  beltrad01     445    1584
+## 5  beltrca01     421    1693
+## 6  bondsba01     762    1539
+## 7  cabremi01     446    1516
+## 8  cansejo01     462    1942
+## 9  dawsoan01     438    1509
+## 10 delgaca01     473    1745
+## 11  dunnad01     462    2379
+## 12 evansda01     414    1410
+## 13  foxxji01     534    1311
+## 14 gehrilo01     493     790
+## 15 giambja01     440    1572
+## 16 gonzaju03     434    1273
+## 17 griffke02     630    1779
+## 18 guerrvl01     449     985
+## 19 jacksre01     563    2597
+## 20 jonesan01     434    1748
+## 21 jonesch06     468    1409
+## 22 killeha01     573    1699
+## 23 kingmda01     442    1816
+## 24 konerpa01     439    1391
+## 25 mantlmi01     536    1710
+## 26 matheed01     512    1487
+## 27  mayswi01     660    1526
+## 28 mccovwi01     521    1550
+## 29 mcgrifr01     493    1882
+## 30 mcgwima01     583    1596
+## 31 murraed02     504    1516
+## 32 musiast01     475     696
+## 33 ortizda01     541    1750
+## 34   ottme01     511     896
+## 35 palmera01     569    1348
+## 36 piazzmi01     427    1113
+## 37 pujolal01     591    1053
+## 38 ramirma02     555    1813
+## 39 ripkeca01     431    1305
+## 40 robinfr02     586    1532
+## 41 rodrial01     696    2287
+## 42  ruthba01     714    1330
+## 43 schmimi01     548    1883
+## 44 sheffga01     509    1171
+## 45 snidedu01     407    1237
+## 46 soriaal01     412    1803
+## 47  sosasa01     609    2306
+## 48 stargwi01     475    1936
+## 49 teixema01     409    1441
+## 50 thomafr04     521    1397
+## 51 thomeji01     612    2548
+## 52 willibi01     426    1046
+## 53 willite01     521     709
+## 54 winfida01     465    1686
+## 55 yastrca01     452    1393</code></pre>
+
+<p>&hellip; Then we need to save this data in result &hellip;</p>
+
+<pre class="r"><code>query&lt;-&quot;SELECT playerID,sum(HR),sum(SO)
+FROM Batting 
+GROUP BY playerID
+HAVING sum(HR)&gt;400&quot;
+results<-sqldf(query)</code></pre>
+
+<p>&hellip; now to visulaize the data &hellip;</p>
+
+<pre class="r"><code>ggplot()+
+  geom_point(data=result,aes(x=career_SO,y=career_HR),size=3, color="blue")+
+  ggtitle("Career Strikeouts VS Homeruns For Great Hitters")+
+  xlab("career Strikeouts")+
+  ylab("Career Homeruns")</code></pre>
+            <ul class="share-buttons">
+    <li>Share this article:</li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fexample.org%2fpost%2fmigrate-from-jekyll%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook"></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=Visualizing%20Data&amp;url=https%3a%2f%2fexample.org%2fpost%2fmigrate-from-jekyll%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Tweet this article"></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fexample.org%2fpost%2fmigrate-from-jekyll%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google&#43;"></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fexample.org%2fpost%2fmigrate-from-jekyll%2f&title=Visualizing%20Data" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title="Share on Linkedin"></a>
+    </li>
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            <h3>Comments</h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "spf13" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="https://example.org/img/seniorpic.jpg" alt="Peter Chuzie" />
+  <p class="name">by 
+  <strong>Peter Chuzie</strong></p>
+  <p class="address">Mercyhurst University</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+<li><a href="//twitter.com/spf13" class="icon-twitter" target="_blank" title="Twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/digitalcraftsman" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="https://example.org/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="https://example.org/post/index.xml" title="RSS"></a>
+        <p>&copy; 2017 &middot; Powered by <a href="http://gohugo.io">Hugo</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="https:\/\/example.org\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="https://example.org/js/plugins.js"></script>
+
+
+
+
+</body>
+</html>
+
