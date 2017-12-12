@@ -6,7 +6,7 @@ slug: bar-plots
 categories: []
 tags: []
 ---
-
+### First, bring in all the neccessary tools ...
 ```{r warning=FALSE, message= FALSE}
 library(Lahman)
 library(sqldf)
@@ -14,7 +14,7 @@ library(ggplot2)
 ```
 
 
-
+### THen, to create a bar plot we ....
 ```{r warning=FALSE, message= FALSE}
 query<-"SELECT name,HR
 FROM Teams

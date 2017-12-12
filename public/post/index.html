@@ -55,9 +55,12 @@
 </span>
 </footer>
 
-    <p>library(Lahman)
+    <p><p>First, bring in all the neccessary tools …
+library(Lahman)
 library(sqldf)
-library(ggplot2)
+library(ggplot2)</p>
+
+<p>THen, to create a bar plot we ….
 query&lt;-&quot;SELECT name,HR
 FROM Teams
 WHERE yearID=1980
@@ -69,7 +72,8 @@ geom_bar(data=result,aes(x=name,y=HR),stat=&#39;identity&#39;,color=&quot;white&
 coord_flip()+
 ylab(&quot;Homeruns&quot;)+
 xlab(&quot;Teams&quot;)+
-ggtitle(&quot;1980 Team Homerun Distribution&quot;)&hellip;</p>
+ggtitle(&quot;1980 Team Homerun Distribution&quot;)</p>
+&hellip;</p>
     <a href="https://laboratory-assistant-mole-46760.netlify.com/post/bar-plots/" title="Bar Plots">Read more &raquo;</a>
 </article>
 
@@ -113,9 +117,12 @@ ggtitle(&quot;Body Weight Distribution for Baseball Players&quot;)</p>
 </span>
 </footer>
 
-    <p><p>library(Lahman)
+    <p><p>Bring in the required tools …
+library(Lahman)
 library(sqldf)
 library(ggplot2)</p>
+
+<p>… next, we will make a time series which is a a series of values of a quantity obtained at successive times, often with equal intervals between them. … this will show the movement of data over time …</p>
 
 <h4 id="extraction-of-data">Extraction of data&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-</h4>
 

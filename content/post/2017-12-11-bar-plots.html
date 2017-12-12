@@ -9,9 +9,14 @@ tags: []
 
 
 
+<div id="first-bring-in-all-the-neccessary-tools" class="section level3">
+<h3>First, bring in all the neccessary tools …</h3>
 <pre class="r"><code>library(Lahman)
 library(sqldf)
 library(ggplot2)</code></pre>
+</div>
+<div id="then-to-create-a-bar-plot-we-." class="section level3">
+<h3>THen, to create a bar plot we ….</h3>
 <pre class="r"><code>query&lt;-&quot;SELECT name,HR
 FROM Teams
 WHERE yearID=1980
@@ -28,3 +33,4 @@ ggplot()+
   xlab(&quot;Teams&quot;)+
   ggtitle(&quot;1980 Team Homerun Distribution&quot;)</code></pre>
 <p><img src="/post/2017-12-11-bar-plots_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+</div>

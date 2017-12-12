@@ -6,14 +6,14 @@ slug: time-series
 categories: []
 tags: []
 ---
-
+### Bring in the required tools ...
 ```{r warning=FALSE, message=FALSE}
 library(Lahman)
 library(sqldf)
 library(ggplot2)
 ```
 
-
+### ... next, we will make a time series which is a a series of values of a quantity obtained at successive times, often with equal intervals between them. ... this will show the movement of data over time ...
 ```{r warning=FALSE, message=FALSE}
 #### Extraction of data----------------------------
 

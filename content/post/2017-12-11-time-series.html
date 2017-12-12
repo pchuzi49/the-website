@@ -9,9 +9,14 @@ tags: []
 
 
 
+<div id="bring-in-the-required-tools" class="section level3">
+<h3>Bring in the required tools …</h3>
 <pre class="r"><code>library(Lahman)
 library(sqldf)
 library(ggplot2)</code></pre>
+</div>
+<div id="next-we-will-make-a-time-series-which-is-a-a-series-of-values-of-a-quantity-obtained-at-successive-times-often-with-equal-intervals-between-them.-this-will-show-the-movement-of-data-over-time" class="section level3">
+<h3>… next, we will make a time series which is a a series of values of a quantity obtained at successive times, often with equal intervals between them. … this will show the movement of data over time …</h3>
 <pre class="r"><code>#### Extraction of data----------------------------
 
 query&lt;-&quot;SELECT yearID,HR
@@ -29,3 +34,4 @@ ggplot()+
   xlab(&quot;Year&quot;)+
   ylab(&quot;Homeruns&quot;)</code></pre>
 <p><img src="/post/2017-12-11-time-series_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+</div>
