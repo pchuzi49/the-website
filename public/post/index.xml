@@ -2,49 +2,49 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Peter Chuzie&#39;s blog</title>
-    <link>https://laboratory-assistant-mole-46760.netlify.com/post/</link>
+    <link>https://peters-blog.netlify.com/post/</link>
     <description>Recent content in Posts on Peter Chuzie&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Powered by [Hugo](http://gohugo.io).</copyright>
     <lastBuildDate>Mon, 11 Dec 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://laboratory-assistant-mole-46760.netlify.com/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://peters-blog.netlify.com/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Bar Plots</title>
-      <link>https://laboratory-assistant-mole-46760.netlify.com/post/bar-plots/</link>
+      <link>https://peters-blog.netlify.com/post/bar-plots/</link>
       <pubDate>Mon, 11 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://laboratory-assistant-mole-46760.netlify.com/post/bar-plots/</guid>
+      <guid>https://peters-blog.netlify.com/post/bar-plots/</guid>
       <description>First, bring in all the neccessary tools …library(Lahman)library(sqldf)library(ggplot2)THen, to create a bar plot we ….query&amp;lt;-&amp;quot;SELECT name,HRFROM TeamsWHERE yearID=1980ORDER BY HR&amp;quot;result&amp;lt;-sqldf(query)result$name&amp;lt;-factor(result$name,levels=result$name)ggplot()+geom_bar(data=result,aes(x=name,y=HR),stat=&amp;#39;identity&amp;#39;,color=&amp;quot;white&amp;quot;,fill=&amp;quot;blue&amp;quot;)+coord_flip()+ylab(&amp;quot;Homeruns&amp;quot;)+xlab(&amp;quot;Teams&amp;quot;)+ggtitle(&amp;quot;1980 Team Homerun Distribution&amp;quot;)</description>
     </item>
     
     <item>
       <title>Histograms</title>
-      <link>https://laboratory-assistant-mole-46760.netlify.com/post/histograms/</link>
+      <link>https://peters-blog.netlify.com/post/histograms/</link>
       <pubDate>Mon, 11 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://laboratory-assistant-mole-46760.netlify.com/post/histograms/</guid>
+      <guid>https://peters-blog.netlify.com/post/histograms/</guid>
       <description>Bring in the required tools …library(Lahman)library(sqldf)library(ggplot2)Next, Select your data and make a histogram, which is a diagram consisting of rectangles whose area is proportional to the frequency of a variable and whose width is equal to the class interval …query&amp;lt;-&amp;quot;SELECT weightFROM Master&amp;quot;result&amp;lt;-sqldf(query)ggplot()+geom_histogram(data=result,aes(x=weight),color=&amp;quot;green&amp;quot;,fill=&amp;quot;white&amp;quot;,bins=50)+ggtitle(&amp;quot;Body Weight Distribution for Baseball Players&amp;quot;)</description>
     </item>
     
     <item>
       <title>Scatter Plot</title>
-      <link>https://laboratory-assistant-mole-46760.netlify.com/post/scatter-plot/</link>
+      <link>https://peters-blog.netlify.com/post/scatter-plot/</link>
       <pubDate>Mon, 11 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://laboratory-assistant-mole-46760.netlify.com/post/scatter-plot/</guid>
+      <guid>https://peters-blog.netlify.com/post/scatter-plot/</guid>
       <description>library(Lahman)library(sqldf)library(ggplot2)#Extractcing Data----------------------------query&amp;lt;-&amp;quot;SELECT playerID,sum(HR) AS career_HR ,sum(SO) AS career_SO FROM BattingGROUP BY playerIDHAVING sum(HR)&amp;gt;=400&amp;quot;result&amp;lt;-sqldf(query)#Visulaizing Data----------------------------ggplot()+geom_point(data=result,aes(x=career_SO,y=career_HR), size=3, color=&amp;quot;blue&amp;quot;)+ggtitle(&amp;quot;Career Strikeouts vs. Homeruns for Great Hitters&amp;quot;)+xlab(&amp;quot;Career Strikeouts&amp;quot;)+ylab(&amp;quot;Career Homerunes&amp;quot;)</description>
     </item>
     
     <item>
       <title>Time Series</title>
-      <link>https://laboratory-assistant-mole-46760.netlify.com/post/time-series/</link>
+      <link>https://peters-blog.netlify.com/post/time-series/</link>
       <pubDate>Mon, 11 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://laboratory-assistant-mole-46760.netlify.com/post/time-series/</guid>
+      <guid>https://peters-blog.netlify.com/post/time-series/</guid>
       <description>Bring in the required tools …library(Lahman)library(sqldf)library(ggplot2)… next, we will make a time series which is a a series of values of a quantity obtained at successive times, often with equal intervals between them. … this will show the movement of data over time …#### Extraction of data----------------------------query&amp;lt;-&amp;quot;SELECT yearID,HRFROM BattingWHERE playerID=&amp;#39;ruthba01&amp;#39;&amp;quot;result&amp;lt;-sqldf(query)#### Visualization of data-------------------------ggplot()+#geom_point(data=result,aes(x=yearID,y=HR))+geom_line(data=result,aes(x=yearID,y=HR))+ggtitle(&amp;quot;Ruth&amp;#39;s Homerun Totals Throughout the Years&amp;quot;)+xlab(&amp;quot;Year&amp;quot;)+ylab(&amp;quot;Homeruns&amp;quot;)</description>
     </item>
     
