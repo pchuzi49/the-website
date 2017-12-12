@@ -48,18 +48,5 @@
       <description>Bring in the required tools …library(Lahman)library(sqldf)library(ggplot2)… next, we will make a time series which is a a series of values of a quantity obtained at successive times, often with equal intervals between them. … this will show the movement of data over time …#### Extraction of data----------------------------query&amp;lt;-&amp;quot;SELECT yearID,HRFROM BattingWHERE playerID=&amp;#39;ruthba01&amp;#39;&amp;quot;result&amp;lt;-sqldf(query)#### Visualization of data-------------------------ggplot()+#geom_point(data=result,aes(x=yearID,y=HR))+geom_line(data=result,aes(x=yearID,y=HR))+ggtitle(&amp;quot;Ruth&amp;#39;s Homerun Totals Throughout the Years&amp;quot;)+xlab(&amp;quot;Year&amp;quot;)+ylab(&amp;quot;Homeruns&amp;quot;)</description>
     </item>
     
-    <item>
-      <title>Visualizing Data</title>
-      <link>https://laboratory-assistant-mole-46760.netlify.com/post/migrate-from-jekyll/</link>
-      <pubDate>Tue, 10 Oct 2017 13:07:31 +0200</pubDate>
-      
-      <guid>https://laboratory-assistant-mole-46760.netlify.com/post/migrate-from-jekyll/</guid>
-      <description>&lt;h2 id=&#34;scatter-plots&#34;&gt;Scatter Plots&lt;/h2&gt;
-
-&lt;p&gt;First it is important to library all the required tools &amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
   </channel>
 </rss>

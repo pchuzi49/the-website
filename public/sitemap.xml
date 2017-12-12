@@ -23,30 +23,7 @@
   </url>
   
   <url>
-    <loc>https://laboratory-assistant-mole-46760.netlify.com/post/migrate-from-jekyll/</loc>
-    <lastmod>2017-10-10T13:07:31+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://laboratory-assistant-mole-46760.netlify.com/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://laboratory-assistant-mole-46760.netlify.com/tags/hugo/</loc>
-    <lastmod>2017-10-10T13:07:31+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://laboratory-assistant-mole-46760.netlify.com/tags/jekyll/</loc>
-    <lastmod>2017-10-10T13:07:31+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://laboratory-assistant-mole-46760.netlify.com/tags/migration/</loc>
-    <lastmod>2017-10-10T13:07:31+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -64,7 +41,6 @@
   
   <url>
     <loc>https://laboratory-assistant-mole-46760.netlify.com/tags/</loc>
-    <lastmod>2017-10-10T13:07:31+02:00</lastmod>
     <priority>0</priority>
   </url>
   
