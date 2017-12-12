@@ -8,25 +8,25 @@
         <meta name="description" content="The decent blog of Peter Chuzie.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="generator" content="Hugo 0.29" />
-        <link href="/post/index.xml" rel="alternate" type="application/rss+xml" title="Peter Chuzie&#39;s blog" />
-        <link href="/post/index.xml" rel="feed" type="application/rss+xml" title="Peter Chuzie&#39;s blog" />
+        <link href="https://laboratory-assistant-mole-46760.netlify.com/post/index.xml" rel="alternate" type="application/rss+xml" title="Peter Chuzie&#39;s blog" />
+        <link href="https://laboratory-assistant-mole-46760.netlify.com/post/index.xml" rel="feed" type="application/rss+xml" title="Peter Chuzie&#39;s blog" />
         <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="/css/styles.css">
-        <link rel="icon" href="/favicon.ico">
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="stylesheet" href="/css/highlightjs/monokai.css">
-        <script src="/js/vendor/modernizr-2.8.0.min.js"></script>
+        <link rel="stylesheet" href="https://laboratory-assistant-mole-46760.netlify.com/css/styles.css">
+        <link rel="icon" href="https://laboratory-assistant-mole-46760.netlify.com/favicon.ico">
+        <link rel="apple-touch-icon" href="https://laboratory-assistant-mole-46760.netlify.com/apple-touch-icon.png" />
+        <link rel="stylesheet" href="https://laboratory-assistant-mole-46760.netlify.com/css/highlightjs/monokai.css">
+        <script src="https://laboratory-assistant-mole-46760.netlify.com/js/vendor/modernizr-2.8.0.min.js"></script>
         
         <style>
         .site-header h2 .logo {
-        background: url(/img/desk.jpg) no-repeat 0 0;
+        background: url(https://laboratory-assistant-mole-46760.netlify.com/img/desk.jpg) no-repeat 0 0;
         }
         @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
           .site-header h2 .logo {
-            background-image: url(/img/desk.jpg);
+            background-image: url(https://laboratory-assistant-mole-46760.netlify.com/img/desk.jpg);
         }}
        .site-header {
-         background: #2a373d url(/img/desk.jpg) no-repeat center center;
+         background: #2a373d url(https://laboratory-assistant-mole-46760.netlify.com/img/desk.jpg) no-repeat center center;
          z-index: -1;
         }
         </style>
@@ -35,7 +35,7 @@
         
         <header class="site-header">
           <div class="transparent-layer">
-              <h2>Customizable header title</h2>
+              <h2>Peter&#39;s Data Science Blog</h2>
           </div>
         </header>
 
@@ -45,17 +45,110 @@
         
             <article class="post">
     
-<h1><a href="/post/migrate-from-jekyll/" title="Visualizing Data">Visualizing Data</a></h1>
+<h1><a href="https://laboratory-assistant-mole-46760.netlify.com/post/bar-plots/" title="Bar Plots">Bar Plots</a></h1>
+
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.12.11">2017.12.11</time>
+
+    
+
+</span>
+</footer>
+
+    <p>library(Lahman)
+library(sqldf)
+library(ggplot2)
+query&lt;-&quot;SELECT name,HR
+FROM Teams
+WHERE yearID=1980
+ORDER BY HR&quot;
+result&lt;-sqldf(query)
+result$name&lt;-factor(result$name,levels=result$name)
+ggplot()+
+geom_bar(data=result,aes(x=name,y=HR),stat=&#39;identity&#39;,color=&quot;white&quot;,fill=&quot;blue&quot;)+
+coord_flip()+
+ylab(&quot;Homeruns&quot;)+
+xlab(&quot;Teams&quot;)+
+ggtitle(&quot;1980 Team Homerun Distribution&quot;)&hellip;</p>
+    <a href="https://laboratory-assistant-mole-46760.netlify.com/post/bar-plots/" title="Bar Plots">Read more &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://laboratory-assistant-mole-46760.netlify.com/post/histograms/" title="Histograms">Histograms</a></h1>
+
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.12.11">2017.12.11</time>
+
+    
+
+</span>
+</footer>
+
+    <p><p>Bring in the required tools …
+library(Lahman)
+library(sqldf)
+library(ggplot2)</p>
+
+<p>Next, Select your data and make a histogram, which is a diagram consisting of rectangles whose area is proportional to the frequency of a variable and whose width is equal to the class interval …
+query&lt;-&quot;SELECT weight
+FROM Master&quot;
+result&lt;-sqldf(query)
+ggplot()+
+geom_histogram(data=result,aes(x=weight),color=&quot;green&quot;,fill=&quot;white&quot;,bins=50)+
+ggtitle(&quot;Body Weight Distribution for Baseball Players&quot;)</p>
+&hellip;</p>
+    <a href="https://laboratory-assistant-mole-46760.netlify.com/post/histograms/" title="Histograms">Read more &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://laboratory-assistant-mole-46760.netlify.com/post/time-series/" title="Time Series">Time Series</a></h1>
+
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.12.11">2017.12.11</time>
+
+    
+
+</span>
+</footer>
+
+    <p><p>library(Lahman)
+library(sqldf)
+library(ggplot2)</p>
+
+<h4 id="extraction-of-data">Extraction of data&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-</h4>
+
+<p>query&lt;-&quot;SELECT yearID,HR
+FROM Batting
+WHERE playerID=&#39;ruthba01&#39;&quot;
+result&lt;-sqldf(query)</p>
+
+<h4 id="visualization-of-data">Visualization of data&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-</h4>
+
+<p>ggplot()+
+#geom_point(data=result,aes(x=yearID,y=HR))+
+geom_line(data=result,aes(x=yearID,y=HR))+
+ggtitle(&quot;Ruth&#39;s Homerun Totals Throughout the Years&quot;)+
+xlab(&quot;Year&quot;)+
+ylab(&quot;Homeruns&quot;)</p>
+&hellip;</p>
+    <a href="https://laboratory-assistant-mole-46760.netlify.com/post/time-series/" title="Time Series">Read more &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://laboratory-assistant-mole-46760.netlify.com/post/migrate-from-jekyll/" title="Visualizing Data">Visualizing Data</a></h1>
 
 <footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.10.10">2017.10.10</time>
 
     &middot; Tagged in
         
-        <a href="/tags/jekyll">jekyll</a>, 
+        <a href="https://laboratory-assistant-mole-46760.netlify.comtags/jekyll">jekyll</a>, 
         
-        <a href="/tags/migration">migration</a>, 
+        <a href="https://laboratory-assistant-mole-46760.netlify.comtags/migration">migration</a>, 
         
-        <a href="/tags/hugo">hugo</a>
+        <a href="https://laboratory-assistant-mole-46760.netlify.comtags/hugo">hugo</a>
         
     
 
@@ -68,101 +161,7 @@
 
 <p></p>
 &hellip;</p>
-    <a href="/post/migrate-from-jekyll/" title="Visualizing Data">Read more &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="/post/go-is-for-lovers/" title="Go is for lovers">Go is for lovers</a></h1>
-
-<footer class="post-info">Posted on <span class="post-meta"><time datetime="2015.09.17">2015.09.17</time>
-
-    
-
-</span>
-</footer>
-
-    <p>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
-This document is a brief primer on using go templates.&hellip;</p>
-    <a href="/post/go-is-for-lovers/" title="Go is for lovers">Read more &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="/post/hugo-is-for-lovers/" title="Hugo is for lovers">Hugo is for lovers</a></h1>
-
-<footer class="post-info">Posted on <span class="post-meta"><time datetime="2015.08.03">2015.08.03</time>
-
-    &middot; Tagged in
-        
-        <a href="/tags/hugo">hugo</a>
-        
-    
-
-</span>
-</footer>
-
-    <p><h2 id="step-1-install-hugo">Step 1. Install Hugo</h2>
-
-<p>Goto <a href="https://github.com/spf13/hugo/releases">hugo releases</a> and download the
-appropriate version for your os and architecture.</p>
-
-<p>Save it somewhere specific as we will be using it in the next step.</p>
-
-<p>More complete instructions are available at <a href="/overview/installing/">installing hugo</a></p>
-
-<p></p>
-&hellip;</p>
-    <a href="/post/hugo-is-for-lovers/" title="Hugo is for lovers">Read more &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="/post/2015-07-23-r-rmarkdown/" title="Hello R Markdown">Hello R Markdown</a></h1>
-
-<footer class="post-info">Posted on <span class="post-meta"><time datetime="2015.07.23">2015.07.23</time>
-
-    &middot; Tagged in
-        
-        <a href="/tags/r-markdown">r markdown</a>, 
-        
-        <a href="/tags/plot">plot</a>, 
-        
-        <a href="/tags/regression">regression</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>R Markdown
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com">http://rmarkdown.rstudio.com</a>.
-You can embed an R code chunk like this:
-summary(cars)</p>
-
-<h2 id="speed-dist-min-4-0-min-2-00-1st-qu-12-0-1st-qu-26-00-median-15-0-median-36-00-mean-15-4-mean-42-98-3rd-qu">speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</h2>
-&hellip;</p>
-    <a href="/post/2015-07-23-r-rmarkdown/" title="Hello R Markdown">Read more &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="/post/creating-a-new-theme/" title="Creating a new theme">Creating a new theme</a></h1>
-
-<footer class="post-info">Posted on <span class="post-meta"><time datetime="2015.06.24">2015.06.24</time>
-
-    
-
-</span>
-</footer>
-
-    <p>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&rsquo;t cover using CSS to style your theme.
-We&rsquo;ll start with creating a new site with a very basic template.&hellip;</p>
-    <a href="/post/creating-a-new-theme/" title="Creating a new theme">Read more &raquo;</a>
+    <a href="https://laboratory-assistant-mole-46760.netlify.com/post/migrate-from-jekyll/" title="Visualizing Data">Read more &raquo;</a>
 </article>
 
         
@@ -180,7 +179,7 @@ We&rsquo;ll start with creating a new site with a very basic template.&hellip;</
     </main>
 
     <aside class="author">
-  <img class="profile-image" src="/img/seniorpic.jpg" alt="Peter Chuzie" />
+  <img class="profile-image" src="https://laboratory-assistant-mole-46760.netlify.com/img/seniorpic.jpg" alt="Peter Chuzie" />
   <p class="name">by 
   <strong>Peter Chuzie</strong></p>
   <p class="address">Mercyhurst University</p>
@@ -206,7 +205,7 @@ We&rsquo;ll start with creating a new site with a very basic template.&hellip;</
 
 
 
-<li><a href="/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+<li><a href="https://laboratory-assistant-mole-46760.netlify.compost/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
 
   </ul>
   <br><br>
@@ -216,7 +215,7 @@ We&rsquo;ll start with creating a new site with a very basic template.&hellip;</
 
 <footer class="main-footer">
   <div class="container clearfix">
-        <a class="icon-rss" href="/post/index.xml" title="RSS"></a>
+        <a class="icon-rss" href="https://laboratory-assistant-mole-46760.netlify.com/post/index.xml" title="RSS"></a>
         <p>&copy; 2017 &middot; Powered by <a href="http://gohugo.io">Hugo</a>.</p>
   </div>
 </footer>
@@ -224,8 +223,8 @@ We&rsquo;ll start with creating a new site with a very basic template.&hellip;</
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-<script>window.jQuery || document.write('<script src="\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
-<script src="/js/plugins.js"></script>
+<script>window.jQuery || document.write('<script src="https:\/\/laboratory-assistant-mole-46760.netlify.com\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="https://laboratory-assistant-mole-46760.netlify.com/js/plugins.js"></script>
 
 
 

@@ -2,76 +2,54 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Peter Chuzie&#39;s blog</title>
-    <link>/post/</link>
+    <link>https://laboratory-assistant-mole-46760.netlify.com/post/</link>
     <description>Recent content in Posts on Peter Chuzie&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Powered by [Hugo](http://gohugo.io).</copyright>
-    <lastBuildDate>Tue, 10 Oct 2017 13:07:31 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 11 Dec 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://laboratory-assistant-mole-46760.netlify.com/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Bar Plots</title>
+      <link>https://laboratory-assistant-mole-46760.netlify.com/post/bar-plots/</link>
+      <pubDate>Mon, 11 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://laboratory-assistant-mole-46760.netlify.com/post/bar-plots/</guid>
+      <description>library(Lahman)library(sqldf)library(ggplot2)query&amp;lt;-&amp;quot;SELECT name,HRFROM TeamsWHERE yearID=1980ORDER BY HR&amp;quot;result&amp;lt;-sqldf(query)result$name&amp;lt;-factor(result$name,levels=result$name)ggplot()+geom_bar(data=result,aes(x=name,y=HR),stat=&amp;#39;identity&amp;#39;,color=&amp;quot;white&amp;quot;,fill=&amp;quot;blue&amp;quot;)+coord_flip()+ylab(&amp;quot;Homeruns&amp;quot;)+xlab(&amp;quot;Teams&amp;quot;)+ggtitle(&amp;quot;1980 Team Homerun Distribution&amp;quot;)</description>
+    </item>
+    
+    <item>
+      <title>Histograms</title>
+      <link>https://laboratory-assistant-mole-46760.netlify.com/post/histograms/</link>
+      <pubDate>Mon, 11 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://laboratory-assistant-mole-46760.netlify.com/post/histograms/</guid>
+      <description>Bring in the required tools …library(Lahman)library(sqldf)library(ggplot2)Next, Select your data and make a histogram, which is a diagram consisting of rectangles whose area is proportional to the frequency of a variable and whose width is equal to the class interval …query&amp;lt;-&amp;quot;SELECT weightFROM Master&amp;quot;result&amp;lt;-sqldf(query)ggplot()+geom_histogram(data=result,aes(x=weight),color=&amp;quot;green&amp;quot;,fill=&amp;quot;white&amp;quot;,bins=50)+ggtitle(&amp;quot;Body Weight Distribution for Baseball Players&amp;quot;)</description>
+    </item>
+    
+    <item>
+      <title>Time Series</title>
+      <link>https://laboratory-assistant-mole-46760.netlify.com/post/time-series/</link>
+      <pubDate>Mon, 11 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://laboratory-assistant-mole-46760.netlify.com/post/time-series/</guid>
+      <description>library(Lahman)library(sqldf)library(ggplot2)#### Extraction of data----------------------------query&amp;lt;-&amp;quot;SELECT yearID,HRFROM BattingWHERE playerID=&amp;#39;ruthba01&amp;#39;&amp;quot;result&amp;lt;-sqldf(query)#### Visualization of data-------------------------ggplot()+#geom_point(data=result,aes(x=yearID,y=HR))+geom_line(data=result,aes(x=yearID,y=HR))+ggtitle(&amp;quot;Ruth&amp;#39;s Homerun Totals Throughout the Years&amp;quot;)+xlab(&amp;quot;Year&amp;quot;)+ylab(&amp;quot;Homeruns&amp;quot;)</description>
+    </item>
+    
+    <item>
       <title>Visualizing Data</title>
-      <link>/post/migrate-from-jekyll/</link>
+      <link>https://laboratory-assistant-mole-46760.netlify.com/post/migrate-from-jekyll/</link>
       <pubDate>Tue, 10 Oct 2017 13:07:31 +0200</pubDate>
       
-      <guid>/post/migrate-from-jekyll/</guid>
+      <guid>https://laboratory-assistant-mole-46760.netlify.com/post/migrate-from-jekyll/</guid>
       <description>&lt;h2 id=&#34;scatter-plots&#34;&gt;Scatter Plots&lt;/h2&gt;
 
 &lt;p&gt;First it is important to library all the required tools &amp;hellip;&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Go is for lovers</title>
-      <link>/post/go-is-for-lovers/</link>
-      <pubDate>Thu, 17 Sep 2015 13:47:08 +0200</pubDate>
-      
-      <guid>/post/go-is-for-lovers/</guid>
-      <description>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
-This document is a brief primer on using go templates.</description>
-    </item>
-    
-    <item>
-      <title>Hugo is for lovers</title>
-      <link>/post/hugo-is-for-lovers/</link>
-      <pubDate>Mon, 03 Aug 2015 13:39:46 +0200</pubDate>
-      
-      <guid>/post/hugo-is-for-lovers/</guid>
-      <description>&lt;h2 id=&#34;step-1-install-hugo&#34;&gt;Step 1. Install Hugo&lt;/h2&gt;
-
-&lt;p&gt;Goto &lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;hugo releases&lt;/a&gt; and download the
-appropriate version for your os and architecture.&lt;/p&gt;
-
-&lt;p&gt;Save it somewhere specific as we will be using it in the next step.&lt;/p&gt;
-
-&lt;p&gt;More complete instructions are available at &lt;a href=&#34;/overview/installing/&#34;&gt;installing hugo&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Hello R Markdown</title>
-      <link>/post/2015-07-23-r-rmarkdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>/post/2015-07-23-r-rmarkdown/</guid>
-      <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
-    </item>
-    
-    <item>
-      <title>Creating a new theme</title>
-      <link>/post/creating-a-new-theme/</link>
-      <pubDate>Wed, 24 Jun 2015 13:50:46 +0200</pubDate>
-      
-      <guid>/post/creating-a-new-theme/</guid>
-      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
-We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
     </item>
     
   </channel>

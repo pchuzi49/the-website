@@ -1,0 +1,29 @@
+---
+title: Histograms
+author: Peter Chuzie
+date: '2017-12-11'
+slug: histograms
+categories: []
+tags: []
+---
+
+
+
+<div id="bring-in-the-required-tools" class="section level4">
+<h4>Bring in the required tools …</h4>
+<pre class="r"><code>library(Lahman)
+library(sqldf)
+library(ggplot2)</code></pre>
+</div>
+<div id="next-select-your-data-and-make-a-histogram-which-is-a-diagram-consisting-of-rectangles-whose-area-is-proportional-to-the-frequency-of-a-variable-and-whose-width-is-equal-to-the-class-interval" class="section level4">
+<h4>Next, Select your data and make a histogram, which is a diagram consisting of rectangles whose area is proportional to the frequency of a variable and whose width is equal to the class interval …</h4>
+<pre class="r"><code>query&lt;-&quot;SELECT weight
+FROM Master&quot;
+
+result&lt;-sqldf(query)
+
+ggplot()+
+  geom_histogram(data=result,aes(x=weight),color=&quot;green&quot;,fill=&quot;white&quot;,bins=50)+
+  ggtitle(&quot;Body Weight Distribution for Baseball Players&quot;)</code></pre>
+<p><img src="/post/2017-12-11-histograms_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+</div>

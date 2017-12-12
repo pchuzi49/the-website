@@ -1,0 +1,31 @@
+---
+title: Time Series
+author: Peter Chuzie
+date: '2017-12-11'
+slug: time-series
+categories: []
+tags: []
+---
+
+
+
+<pre class="r"><code>library(Lahman)
+library(sqldf)
+library(ggplot2)</code></pre>
+<pre class="r"><code>#### Extraction of data----------------------------
+
+query&lt;-&quot;SELECT yearID,HR
+FROM Batting
+WHERE playerID=&#39;ruthba01&#39;&quot;
+
+result&lt;-sqldf(query)
+
+#### Visualization of data-------------------------
+
+ggplot()+
+  #geom_point(data=result,aes(x=yearID,y=HR))+
+  geom_line(data=result,aes(x=yearID,y=HR))+
+  ggtitle(&quot;Ruth&#39;s Homerun Totals Throughout the Years&quot;)+
+  xlab(&quot;Year&quot;)+
+  ylab(&quot;Homeruns&quot;)</code></pre>
+<p><img src="/post/2017-12-11-time-series_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>

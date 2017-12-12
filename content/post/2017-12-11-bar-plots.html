@@ -1,0 +1,30 @@
+---
+title: Bar Plots
+author: Peter Chuzie
+date: '2017-12-11'
+slug: bar-plots
+categories: []
+tags: []
+---
+
+
+
+<pre class="r"><code>library(Lahman)
+library(sqldf)
+library(ggplot2)</code></pre>
+<pre class="r"><code>query&lt;-&quot;SELECT name,HR
+FROM Teams
+WHERE yearID=1980
+ORDER BY HR&quot;
+
+result&lt;-sqldf(query)
+
+result$name&lt;-factor(result$name,levels=result$name)
+
+ggplot()+
+  geom_bar(data=result,aes(x=name,y=HR),stat=&#39;identity&#39;,color=&quot;white&quot;,fill=&quot;blue&quot;)+
+  coord_flip()+
+  ylab(&quot;Homeruns&quot;)+
+  xlab(&quot;Teams&quot;)+
+  ggtitle(&quot;1980 Team Homerun Distribution&quot;)</code></pre>
+<p><img src="/post/2017-12-11-bar-plots_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>

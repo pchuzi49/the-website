@@ -1,0 +1,33 @@
+---
+title: Time Series
+author: Peter Chuzie
+date: '2017-12-11'
+slug: time-series
+categories: []
+tags: []
+---
+
+```{r warning=FALSE, message=FALSE}
+library(Lahman)
+library(sqldf)
+library(ggplot2)
+```
+
+
+```{r warning=FALSE, message=FALSE}
+#### Extraction of data----------------------------
+
+query<-"SELECT yearID,HR
+FROM Batting
+WHERE playerID='ruthba01'"
+
+result<-sqldf(query)
+
+#### Visualization of data-------------------------
+
+ggplot()+
+  #geom_point(data=result,aes(x=yearID,y=HR))+
+  geom_line(data=result,aes(x=yearID,y=HR))+
+  ggtitle("Ruth's Homerun Totals Throughout the Years")+
+  xlab("Year")+
+  ylab("Homeruns")

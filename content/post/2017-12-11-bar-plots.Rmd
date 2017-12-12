@@ -1,0 +1,34 @@
+---
+title: Bar Plots
+author: Peter Chuzie
+date: '2017-12-11'
+slug: bar-plots
+categories: []
+tags: []
+---
+
+```{r warning=FALSE, message= FALSE}
+library(Lahman)
+library(sqldf)
+library(ggplot2)
+```
+
+
+
+```{r warning=FALSE, message= FALSE}
+query<-"SELECT name,HR
+FROM Teams
+WHERE yearID=1980
+ORDER BY HR"
+
+result<-sqldf(query)
+
+result$name<-factor(result$name,levels=result$name)
+
+ggplot()+
+  geom_bar(data=result,aes(x=name,y=HR),stat='identity',color="white",fill="blue")+
+  coord_flip()+
+  ylab("Homeruns")+
+  xlab("Teams")+
+  ggtitle("1980 Team Homerun Distribution")
+  
