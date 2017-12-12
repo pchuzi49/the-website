@@ -108,6 +108,35 @@ ggtitle(&quot;Body Weight Distribution for Baseball Players&quot;)</p>
         
             <article class="post">
     
+<h1><a href="https://laboratory-assistant-mole-46760.netlify.com/post/scatter-plot/" title="Scatter Plot">Scatter Plot</a></h1>
+
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.12.11">2017.12.11</time>
+
+    
+
+</span>
+</footer>
+
+    <p>library(Lahman)
+library(sqldf)
+library(ggplot2)
+#Extractcing Data&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+query&lt;-&quot;SELECT playerID,sum(HR) AS career_HR ,sum(SO) AS career_SO FROM Batting
+GROUP BY playerID
+HAVING sum(HR)&gt;=400&quot;
+result&lt;-sqldf(query)
+#Visulaizing Data&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+ggplot()+
+geom_point(data=result,aes(x=career_SO,y=career_HR), size=3, color=&quot;blue&quot;)+
+ggtitle(&quot;Career Strikeouts vs. Homeruns for Great Hitters&quot;)+
+xlab(&quot;Career Strikeouts&quot;)+
+ylab(&quot;Career Homerunes&quot;)&hellip;</p>
+    <a href="https://laboratory-assistant-mole-46760.netlify.com/post/scatter-plot/" title="Scatter Plot">Read more &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="https://laboratory-assistant-mole-46760.netlify.com/post/time-series/" title="Time Series">Time Series</a></h1>
 
 <footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.12.11">2017.12.11</time>

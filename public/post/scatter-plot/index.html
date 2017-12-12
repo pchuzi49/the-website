@@ -45,7 +45,7 @@
         <article class="post">
             <a class="btn home" href="https://laboratory-assistant-mole-46760.netlify.com" title="Back to home">&laquo; Back to home</a>
             
-<h1><a href="https://laboratory-assistant-mole-46760.netlify.com/post/time-series/" title="Time Series">Time Series</a></h1>
+<h1><a href="https://laboratory-assistant-mole-46760.netlify.com/post/scatter-plot/" title="Scatter Plot">Scatter Plot</a></h1>
 
 <footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.12.11">2017.12.11</time>
 
@@ -54,46 +54,40 @@
 </span>
 </footer>
 
-            <div id="bring-in-the-required-tools" class="section level3">
-<h3>Bring in the required tools …</h3>
-<pre class="r"><code>library(Lahman)
+            <pre class="r"><code>library(Lahman)
 library(sqldf)
 library(ggplot2)</code></pre>
-</div>
-<div id="next-we-will-make-a-time-series-which-is-a-a-series-of-values-of-a-quantity-obtained-at-successive-times-often-with-equal-intervals-between-them.-this-will-show-the-movement-of-data-over-time" class="section level3">
-<h3>… next, we will make a time series which is a a series of values of a quantity obtained at successive times, often with equal intervals between them. … this will show the movement of data over time …</h3>
-<pre class="r"><code>#### Extraction of data----------------------------
+<pre class="r"><code>#Extractcing Data----------------------------
 
-query&lt;-&quot;SELECT yearID,HR
+query&lt;-&quot;SELECT playerID,sum(HR) AS career_HR ,sum(SO) AS career_SO 
 FROM Batting
-WHERE playerID=&#39;ruthba01&#39;&quot;
+GROUP BY playerID
+HAVING sum(HR)&gt;=400&quot;
 
 result&lt;-sqldf(query)
 
-#### Visualization of data-------------------------
+#Visulaizing Data----------------------------
 
 ggplot()+
-  #geom_point(data=result,aes(x=yearID,y=HR))+
-  geom_line(data=result,aes(x=yearID,y=HR))+
-  ggtitle(&quot;Ruth&#39;s Homerun Totals Throughout the Years&quot;)+
-  xlab(&quot;Year&quot;)+
-  ylab(&quot;Homeruns&quot;)</code></pre>
-<p><img src="/post/2017-12-11-time-series_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
-</div>
+  geom_point(data=result,aes(x=career_SO,y=career_HR), size=3, color=&quot;blue&quot;)+
+  ggtitle(&quot;Career Strikeouts vs. Homeruns for Great Hitters&quot;)+
+  xlab(&quot;Career Strikeouts&quot;)+
+  ylab(&quot;Career Homerunes&quot;)</code></pre>
+<p><img src="/post/2017-12-11-scatter-plot_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 
             <ul class="share-buttons">
     <li></li>
     <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flaboratory-assistant-mole-46760.netlify.com%2fpost%2ftime-series%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flaboratory-assistant-mole-46760.netlify.com%2fpost%2fscatter-plot%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=Time%20Series&amp;url=https%3a%2f%2flaboratory-assistant-mole-46760.netlify.com%2fpost%2ftime-series%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+        <a class="icon-twitter" href="https://twitter.com/share?text=Scatter%20Plot&amp;url=https%3a%2f%2flaboratory-assistant-mole-46760.netlify.com%2fpost%2fscatter-plot%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2flaboratory-assistant-mole-46760.netlify.com%2fpost%2ftime-series%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2flaboratory-assistant-mole-46760.netlify.com%2fpost%2fscatter-plot%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2flaboratory-assistant-mole-46760.netlify.com%2fpost%2ftime-series%2f&title=Time%20Series" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2flaboratory-assistant-mole-46760.netlify.com%2fpost%2fscatter-plot%2f&title=Scatter%20Plot" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
     </li>
 </ul>
 

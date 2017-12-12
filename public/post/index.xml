@@ -31,6 +31,15 @@
     </item>
     
     <item>
+      <title>Scatter Plot</title>
+      <link>https://laboratory-assistant-mole-46760.netlify.com/post/scatter-plot/</link>
+      <pubDate>Mon, 11 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://laboratory-assistant-mole-46760.netlify.com/post/scatter-plot/</guid>
+      <description>library(Lahman)library(sqldf)library(ggplot2)#Extractcing Data----------------------------query&amp;lt;-&amp;quot;SELECT playerID,sum(HR) AS career_HR ,sum(SO) AS career_SO FROM BattingGROUP BY playerIDHAVING sum(HR)&amp;gt;=400&amp;quot;result&amp;lt;-sqldf(query)#Visulaizing Data----------------------------ggplot()+geom_point(data=result,aes(x=career_SO,y=career_HR), size=3, color=&amp;quot;blue&amp;quot;)+ggtitle(&amp;quot;Career Strikeouts vs. Homeruns for Great Hitters&amp;quot;)+xlab(&amp;quot;Career Strikeouts&amp;quot;)+ylab(&amp;quot;Career Homerunes&amp;quot;)</description>
+    </item>
+    
+    <item>
       <title>Time Series</title>
       <link>https://laboratory-assistant-mole-46760.netlify.com/post/time-series/</link>
       <pubDate>Mon, 11 Dec 2017 00:00:00 +0000</pubDate>

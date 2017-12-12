@@ -10,12 +10,6 @@
 [comments]
     comments = "Comments"
 
-[share]
-    title = "Share this article:"
-    facebook = "Share on Facebook"
-    twitter = "Tweet this article"
-    gplus = "Share on Google+"
-    linkedin = "Share on Linkedin"
 
 [pagination]
     newer = "Newer"

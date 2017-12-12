@@ -24,3 +24,4 @@ result<-sqldf(query)
 ggplot()+
   geom_histogram(data=result,aes(x=weight),color="green",fill="white",bins=50)+
   ggtitle("Body Weight Distribution for Baseball Players")
+```
